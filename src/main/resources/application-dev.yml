@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: template
+server:
+  port: 8000
+pocket:
+  datasource:
+    node:
+      - url: jdbc:mysql://127.0.0.1:3306/biscuits_demo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8&useAffectedRows=true
+        nodeName: mysql-01
+        driverName: com.mysql.cj.jdbc.Driver
+        showSql: true
+        user: root
+        password: root
+        poolMiniSize: 5
+        poolMaxSize: 50
+        timeout: 5
+        session: biscuits,template,authentication
+
+biscuits:
+  token:
+    secret: shinow
+    expiration: 600000
+    refreshTime: 300000
+    tokenHead: Bearer
+  filter:
+    turnOn: true
+  serverId: "1039"
+  stationId: "00501"
